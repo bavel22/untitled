@@ -5,32 +5,29 @@ import java.awt.event.ActionListener;
 import java.util.HashMap;
 import java.util.Map;
 
-public class StatBox {
+public class SpellBox {
 
     private int str;
     private int dex;
-    private int con;
-    private int wis;
-    private int intel;
-    private int cha;
+
 
     private Map<String, Integer> stats;
 
-    public StatBox() {
+    public SpellBox() {
 
 
         stats = new HashMap<String, Integer>();
 
-        Frame f=new JFrame("Button Example");
+        Frame f = new JFrame("Button Example");
         //submit button
-        JButton b=new JButton("Save");
-        b.setBounds(500,100,140, 40);
+        JButton b = new JButton("Save");
+        b.setBounds(500, 100, 140, 40);
         //enter name label
         JLabel strLabel = new JLabel();
         strLabel.setText("Strength:");
         strLabel.setBounds(10, 10, 100, 100);
         //textfield to enter name
-        JTextField strEntry= new JTextField();
+        JTextField strEntry = new JTextField();
         strEntry.setBounds(110, 50, 130, 30);
 
         //enter name label
@@ -38,7 +35,7 @@ public class StatBox {
         dexLabel.setText("Strength:");
         dexLabel.setBounds(10, 100, 100, 100);
         //textfield to enter name
-        JTextField dexEntry= new JTextField();
+        JTextField dexEntry = new JTextField();
         dexEntry.setBounds(110, 150, 130, 30);
 
 
@@ -54,10 +51,10 @@ public class StatBox {
         f.add(dexLabel);
         f.add(dexEntry);
         f.add(b);
-        f.setSize(1600,900);
+        f.setSize(1600, 900);
         f.setLayout(null);
         f.setVisible(true);
-    //    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //action listener
         b.addActionListener(new ActionListener() {
@@ -66,74 +63,24 @@ public class StatBox {
             public void actionPerformed(ActionEvent arg0) {
                 saveLabel.setText("Stats have been saved");
 
+
+                stats.put("str", str);
+                stats.put("dex", dex);
+
                 str = Integer.parseInt(strEntry.getText());
                 dex = Integer.parseInt(dexEntry.getText());
                 System.out.println(str);
                 System.out.println(dex);
+
+
+                for (String s:stats.keySet()
+                     ) {
+                    System.out.println(s);
+
+                }
             }
         });
     }
-
-
-
-
-    @Override
-    public String toString() {
-        return "StatBox{" +
-                "str=" + str +
-                ", dex=" + dex +
-                ", con=" + con +
-                ", wis=" + wis +
-                ", intel=" + intel +
-                ", cha=" + cha +
-                '}';
-    }
-
-    public int getStr() {
-        return str;
-    }
-
-    public void setStr(int str) {
-        this.str = str;
-    }
-
-    public int getDex() {
-        return dex;
-    }
-
-    public void setDex(int dex) {
-        this.dex = dex;
-    }
-
-    public int getCon() {
-        return con;
-    }
-
-    public void setCon(int con) {
-        this.con = con;
-    }
-
-    public int getWis() {
-        return wis;
-    }
-
-    public void setWis(int wis) {
-        this.wis = wis;
-    }
-
-    public int getIntel() {
-        return intel;
-    }
-
-    public void setIntel(int intel) {
-        this.intel = intel;
-    }
-
-    public int getCha() {
-        return cha;
-    }
-
-    public void setCha(int cha) {
-        this.cha = cha;
-    }
 }
+
+

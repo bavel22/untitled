@@ -9,6 +9,9 @@ import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 
 public class Main extends JFrame {
+
+
+
     JPopupMenu menu = new JPopupMenu("Popup");
 
     class MyLabel extends JLabel {
@@ -69,5 +72,12 @@ public class Main extends JFrame {
     gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     gui.setSize(300, 200);
     gui.setVisible(true);
+
+        StatBox statBox = new StatBox();
+
     }
+
+
+
+
 }
