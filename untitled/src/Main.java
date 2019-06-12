@@ -1,3 +1,5 @@
+import dice.Dice;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -63,7 +65,22 @@ public class Main extends JFrame {
         setSize(300, 100);
     }
 
+
     public static void main(String[] args) {
+
+        Dice dice = new Dice();
+
+        for (int i = 0; i < 21; i++) {
+            dice.DiceRoll(0,0,0,0,0,4);
+        }
+
+
+
+
+
+
+
+
         new Main().setVisible(true);
 
         System.out.println("test");
@@ -74,6 +91,8 @@ public class Main extends JFrame {
     gui.setVisible(true);
 
         StatBox statBox = new StatBox();
+
+
 
     }
 

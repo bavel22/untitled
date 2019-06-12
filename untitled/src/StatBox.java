@@ -14,9 +14,12 @@ public class StatBox {
     private int intel;
     private int cha;
 
+
     private Map<String, Integer> stats;
 
     public StatBox() {
+
+
 
 
         stats = new HashMap<String, Integer>();
@@ -35,7 +38,7 @@ public class StatBox {
 
         //enter name label
         JLabel dexLabel = new JLabel();
-        dexLabel.setText("Strength:");
+        dexLabel.setText("Dexterity:");
         dexLabel.setBounds(10, 100, 100, 100);
         //textfield to enter name
         JTextField dexEntry= new JTextField();
